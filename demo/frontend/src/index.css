@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-mono: "IBM Plex Mono", "JetBrains Mono", "SF Mono", "Geist Mono", "Courier New", Courier, monospace;
+  
+  --color-bg-primary: #050505;
+  --color-bg-secondary: #0A0A0A;
+  --color-bg-tertiary: #101010;
+  --color-border-standard: #232323;
+  --color-border-soft: #1A1A1A;
+  --color-border-active: #EDEDED;
+  --color-border-dashed: #4A4A4A;
+  --color-text-primary: #F5F5F5;
+  --color-text-secondary: #B8B8B8;
+  --color-text-muted: #7A7A7A;
+  --color-text-disabled: #4F4F4F;
+  --color-accent-green: #93FF8F;
+  --color-accent-green-glow: rgba(147, 255, 143, 0.18);
+}
+
+@layer base {
+  :root {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    font-family: var(--font-mono);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Global noise texture overlay */
+  #root::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+}
+
+@layer utilities {
+  .grid-bg {
+    background-image: linear-gradient(var(--color-border-soft) 1px, transparent 1px), 
+                      linear-gradient(90deg, var(--color-border-soft) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .vignette {
+    background: radial-gradient(circle at center, transparent 40%, var(--color-bg-primary) 100%);
+  }
+
+  .hero-text {
+    font-size: 140px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    line-height: 0.92;
+    text-transform: uppercase;
+  }
+  
+  /* Responsive hero text for smaller screens */
+  @media (max-width: 1024px) {
+    .hero-text { font-size: 80px; }
+  }
+  @media (max-width: 640px) {
+    .hero-text { font-size: 48px; }
+  }
+
+  .major-heading {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
+  .section-heading {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .body-text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  .technical-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .telemetry-number {
+    font-size: 28px;
+    font-weight: 600;
+  }
+
+  .tiny-metadata {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .glitch-glow {
+    text-shadow: 0 0 10px rgba(147, 255, 143, 0.4);
+  }
+  
+  .green-pulse {
+    animation: greenPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes greenPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: var(--color-bg-primary);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--color-border-standard);
+    border-radius: 0px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--color-border-dashed);
+  }
+}

@@ -1,0 +1,36 @@
+2026-05-10 09:22:25,658 INFO    MainThread:20396 [wandb_setup.py:_flush():81] Current SDK version is 0.26.1
+2026-05-10 09:22:25,658 INFO    MainThread:20396 [wandb_setup.py:_flush():81] Configure stats pid to 20396
+2026-05-10 09:22:25,658 INFO    MainThread:20396 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2026-05-10 09:22:25,658 INFO    MainThread:20396 [wandb_init.py:setup_run_log_directory():723] Logging user logs to D:\eidolon-zero\wandb\run-20260510_092225-ms8x91tt\logs\debug.log
+2026-05-10 09:22:25,658 INFO    MainThread:20396 [wandb_init.py:setup_run_log_directory():724] Logging internal logs to D:\eidolon-zero\wandb\run-20260510_092225-ms8x91tt\logs\debug-internal.log
+2026-05-10 09:22:25,658 INFO    MainThread:20396 [wandb_init.py:init():850] calling init triggers
+2026-05-10 09:22:25,659 INFO    MainThread:20396 [wandb_init.py:init():855] wandb.init called with sweep_config: {}
+config: {'architecture': 'Dynamic LoRA Hypernetwork', 'base_model': 'Qwen/Qwen1.5-0.5B', 'lora_rank': 8, 'embedding_dim': 768, '_wandb': {}}
+2026-05-10 09:22:25,659 INFO    MainThread:20396 [wandb_init.py:init():898] starting backend
+2026-05-10 09:22:28,009 INFO    MainThread:20396 [wandb_init.py:init():913] sending inform_init request
+2026-05-10 09:22:29,001 INFO    MainThread:20396 [wandb_init.py:init():918] backend started and connected
+2026-05-10 09:22:29,003 INFO    MainThread:20396 [wandb_init.py:init():988] updated telemetry
+2026-05-10 09:22:29,078 INFO    MainThread:20396 [wandb_init.py:init():1011] communicating run to backend with 90.0 second timeout
+2026-05-10 09:22:29,742 INFO    MainThread:20396 [wandb_init.py:init():1056] starting run threads in backend
+2026-05-10 09:22:29,917 INFO    MainThread:20396 [wandb_run.py:_console_start():2554] atexit reg
+2026-05-10 09:22:29,918 INFO    MainThread:20396 [wandb_run.py:_redirect():2403] redirect: wrap_raw
+2026-05-10 09:22:29,918 INFO    MainThread:20396 [wandb_run.py:_redirect():2472] Wrapping output streams.
+2026-05-10 09:22:29,922 INFO    MainThread:20396 [wandb_run.py:_redirect():2495] Redirects installed.
+2026-05-10 09:22:29,929 INFO    MainThread:20396 [wandb_init.py:init():1094] run started, returning control to user process
+2026-05-10 14:29:07,516 INFO    wandb-AsyncioManager-main:20396 [service_client.py:_forward_responses():134] Reached EOF.
+2026-05-10 14:29:07,517 INFO    wandb-AsyncioManager-main:20396 [mailbox.py:close():155] Closing mailbox, abandoning 1 handles.
+2026-05-10 14:29:10,342 ERROR   wandb-AsyncioManager-main:20396 [asyncio_manager.py:fn_wrap_exceptions():184] Uncaught exception in run_soon callback.
+Traceback (most recent call last):
+  File "D:\eidolon-zero\venv\Lib\site-packages\wandb\sdk\lib\asyncio_manager.py", line 182, in fn_wrap_exceptions
+    await fn()
+  File "D:\eidolon-zero\venv\Lib\site-packages\wandb\sdk\lib\service\service_client.py", line 45, in publish
+    await self._send_server_request(request)
+  File "D:\eidolon-zero\venv\Lib\site-packages\wandb\sdk\lib\service\service_client.py", line 87, in _send_server_request
+    await self._drain_writer()
+  File "D:\eidolon-zero\venv\Lib\site-packages\wandb\sdk\lib\service\service_client.py", line 96, in _drain_writer
+    await self._writer.drain()
+  File "C:\Users\shrij\AppData\Local\Programs\Python\Python313\Lib\asyncio\streams.py", line 386, in drain
+    await self._protocol._drain_helper()
+  File "C:\Users\shrij\AppData\Local\Programs\Python\Python313\Lib\asyncio\streams.py", line 166, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost

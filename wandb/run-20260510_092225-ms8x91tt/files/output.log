@@ -1,0 +1,51 @@
+
+[+] Commencing Hypernetwork Training...
+Step 0000 | Domain: 02_domain_medical | Avg Loss: 54.7500
+Step 0001 | Domain: 05_domain_scientific | Avg Loss: 32.9375
+Step 0002 | Domain: 10_domain_general | Avg Loss: 45.5000
+Step 0003 | Domain: 10_domain_general | Avg Loss: 27.1875
+Step 0004 | Domain: 01_domain_code | Avg Loss: 20.5625
+Step 0005 | Domain: 01_domain_code | Avg Loss: 10.6250
+Step 0006 | Domain: 06_domain_math | Avg Loss: 16.9688
+Step 0007 | Domain: 02_domain_medical | Avg Loss: 18.4062
+Step 0008 | Domain: 06_domain_math | Avg Loss: 3.1797
+Step 0009 | Domain: 09_domain_logic | Avg Loss: 8.7500
+Step 0010 | Domain: 06_domain_math | Avg Loss: 2.1367
+[+] Auto-saved checkpoint to weights/hypernet_step_10.pt
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\eidolon-zero\src\model\trainer.py", line 130, in <module>
+    loss = trainer.train_step(
+        instruction=example['instruction'],
+    ...<2 lines>...
+        domain_vector=domain_vector
+    )
+  File "D:\eidolon-zero\src\model\trainer.py", line 93, in train_step
+    loss.backward()
+    ~~~~~~~~~~~~~^^
+  File "D:\eidolon-zero\venv\Lib\site-packages\torch\_tensor.py", line 631, in backward
+    torch.autograd.backward(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        self, gradient, retain_graph, create_graph, inputs=inputs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\eidolon-zero\venv\Lib\site-packages\torch\autograd\__init__.py", line 381, in backward
+    _engine_run_backward(
+    ~~~~~~~~~~~~~~~~~~~~^
+        tensors,
+        ^^^^^^^^
+    ...<5 lines>...
+        accumulate_grad=True,
+        ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\eidolon-zero\venv\Lib\site-packages\torch\autograd\graph.py", line 869, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        t_outputs, *args, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )  # Calls into the C++ engine to run the backward pass
+    ^
+KeyboardInterrupt

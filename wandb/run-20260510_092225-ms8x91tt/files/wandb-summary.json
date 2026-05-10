@@ -1,0 +1,1 @@
+{"domain_loss/02_domain_medical":18.40625,"_timestamp":1.7784023224285164e+09,"_wandb":{"runtime":18397},"_step":10,"domain_loss/09_domain_logic":8.75,"train/step":10,"train/loss":2.13671875,"domain_loss/05_domain_scientific":32.9375,"domain_loss/10_domain_general":27.1875,"domain_loss/06_domain_math":2.13671875,"domain_loss/01_domain_code":10.625,"_runtime":18397}

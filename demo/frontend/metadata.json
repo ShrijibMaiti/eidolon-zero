@@ -1,0 +1,6 @@
+{
+  "name": "EIDOLON:ZERO",
+  "description": "A dynamic AI inference engine that generates custom LoRA weights on the fly using a Hypernetwork, injecting them into a base LLM in real-time.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["AI Inference", "Dynamic Adapters", "Domain Specialization"]
+}
